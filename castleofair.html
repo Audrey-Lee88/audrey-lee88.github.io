@@ -41,10 +41,8 @@
           <h2>Menu</h2>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="generic.html">Projects</a></li>
-            <li><a href="generic.html">Resume</a></li>
-            <!-- <li><a href="generic.html">Contact</a></li> -->
-            <li><a href="elements.html">Elements</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
           </ul>
         </nav>
 
@@ -55,35 +53,27 @@
               <span class="image fit">
                 <img src="images/background_structure.png" alt="" />
               </span>
-							<p>Working in a group with four other students, I designed and fabricated the electrical components of the physical music visualizer. The goal of this project was to take live audio sound input from a microphone and visualize the rhythm and sound frequencies of that sound/song. My contribution to this project was the microphone sound retrieval and analysis as well as integrating the lights with the software analysis of the rhythm.</p>
-              <span class="image left">
-                <img src="images/12_6_19_pic1.png" alt="" />
-              </span>
               <p>
-              I designed, prototyped, and tested the mircophone input board for the music visualizer. I first created a breadboard version to test if it worked, then moved on to a proto board. This board consisted of the microphone input with a DC filter and an amplifier.
+                Castle of Air is a physical music visualizer that takes a song input from the user and receives the audio sound wave to visualize the different prominent frequencies of the song. I was working in a group with four other students to extract the frequencies and beat of the songs. I designed and fabricated the electrical components of the physical music visualizer.
+                </p>
+              <p>
+The image on the bottom left highlights the third iteration of the sound input board. I included a DC filter and an amplifier in the circuit to ensure that I could see the core sound wave. I used an Arduino to receive the sound input and performed Fourier Transform on the sound wave to extract the frequencies.
             </p>
-            <br><br><br><br><br><br><br><br>
-            <span class="image left">
-              <img src="images/11_12_pic2.png" alt="" />
-            </span>
             <p>
-              After testing that it worked, I designed a Printed Circuit Board to make the wiring more compact and lessen the variability of noise for the microphone.
-
+After testing that the prototype of the sound input board worked, I designed a PCB on KiCAD (as shown in the middle and right bottom pictures).
             </p>
-            <br><br><br><br><br><br><br><br>
-
-            <span class="image left">
-              <img src="images/11_12_pic1.png" alt="" />
-            </span>
             <p>
-              My role was to also perform Fourier Transform on the sound signal as well as test the functionality of the lights.
+I also worked closely with the Software sub-system in my team to control the lights to represent the beat of the songs.
             </p>
-            <br><br><br><br><br><br>
 
-              <p>Alongside my team, I created a website that showcased the contributions and journey of the project: <a href="http://poe.olin.edu/2019/castleofair/">Castle of Air</a></p>
-
-
-
+            <p>Alongside my team, I created a website that showcased the contributions and journey of the project: <a href="http://poe.olin.edu/2019/castleofair/">Castle of Air</a></p>
+            <div class="box alt">
+              <div class="row gtr-uniform">
+            <div class="col-4"><span class="image fit"><img src="images/12_6_19_pic1.png" alt="" /></span></div>
+            <div class="col-4"><span class="image fit"><img src="images/11_12_pic2.png" alt="" /></span></div>
+            <div class="col-4"><span class="image fit"><img src="images/11_12_pic1.png" alt="" /></span></div>
+          </div>
+        </div>
 
 						</div>
 					</div>
@@ -107,7 +97,7 @@
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Audrey Lee. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>Audrey Lee</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>

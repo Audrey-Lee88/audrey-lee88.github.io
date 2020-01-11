@@ -41,10 +41,8 @@
           <h2>Menu</h2>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="generic.html">Projects</a></li>
-            <li><a href="generic.html">Resume</a></li>
-            <!-- <li><a href="generic.html">Contact</a></li> -->
-            <li><a href="elements.html">Elements</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
           </ul>
         </nav>
 
@@ -52,10 +50,37 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Quantitative Engineering Analysis: Tiny Passive Solar Home</h1>
-              <span class="image fit">
-                <img src="images/DesignHouseQEA.jpg" alt="" />
-              </span>
+							<div class="box alt">
+								<div class="row gtr-uniform">
+									<div class="col-5"><span class="image fit"><img src="images/DesignHouseQEA.jpg" alt="" /></span></div>
 
+									<div class="col-5">
+										<p>
+											I worked with two other people to create a tiny solar house that would allow individuals in Boston to live at a comfortable temperature (between 18-25 degrees Celsius or 291.15-298.15 Kelvin) during the winter season. Restrictions included that the dimensions of the house must be between 100 and 400 square feet and it cannot receive direct sunlight through the windows till noon in the summer. This was so that the house was not incredibly tiny nor would it get super hot that no person could live in it. My goal was to design a lofted house that was both aesthetically pleasing and sustainable. Materials that were considered were hempcrete and 3D printer extrudable concrete; and since they were reusable, recyclable and less toxin in comparison to other materials. Heat was expected to rise in the two-story house, however, for my model of the house, a uniform temperature was implemented.
+										</p>
+
+									</div>
+							</div>
+						</div>
+						<p>
+							I modeled the inside temperature of the house with resistors and capacitors as seen in the bottom left picture. For this project, I used Mathematica and MATLAB to model the temperature of the designed tiny house.
+						</p>
+
+						<p>
+
+							I used the equations shown in the bottom right picture to model the interior temperature of the house. The energy balance on the absorber was symbolically represented with Equation (1) and the energy balance on the wall with Equation (2). Equation (1) took into account the energy input from the sun and the temperature of the absorber as a function of time represented as a capacitor. Equation (2) modeled the temperature of the wall as a function of time represented as a capacitor. The internal air and inner wall were represented as resistors since they are just a medium in which heat flows through. Whereas the absorber and outer wall are represented as capacitors and resistors since they both store heat and are also a medium in which heat flows through. The values of T_A and T_wall from Equations (1) and (2) were used to find the temperature of the air with Equation (3). This internal temperature was used to gauge whether the customized values for L_insulation and L_absorber would get us in the desired internal air temperature range (18-25 degrees C).
+
+						</p>
+
+						<p>
+							The paper written by my partners and I can be read <a href="PDF/Passive_Solar_Tiny_Home_for_Massachusetts_.pdf">here</a>
+						</p>
+						<div class="box alt">
+							<div class="row gtr-uniform">
+						<div class="col-5"><span class="image fit"><img src="images/QEACircuitModelProject1.jpg" alt="" /></span></div>
+						<div class="col-6"><span class="image fit"><img src="images/PassiveSolarHouseEq.png" alt="" /></span></div>
+						</div>
+						</div>
             </div>
 
       </div>
@@ -80,7 +105,7 @@
 
       							</section>
       							<ul class="copyright">
-      								<li>&copy; Audrey Lee. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      								<li> Audrey Lee</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
       							</ul>
       						</div>
       					</footer>

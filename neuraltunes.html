@@ -41,10 +41,8 @@
           <h2>Menu</h2>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="generic.html">Projects</a></li>
-            <li><a href="generic.html">Resume</a></li>
-            <!-- <li><a href="generic.html">Contact</a></li> -->
-            <li><a href="elements.html">Elements</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
           </ul>
         </nav>
 
@@ -55,7 +53,33 @@
               <span class="image fit">
                 <img src="images/NotesSquare.png" alt="" />
               </span>
+              <p>
+For my final Machine Learning course project, I worked with a partner to build a piece of software to generate music. I used a dataset of MIDI files and trained a recurrent neural network with LSTM (Long Short-Term Memory) cells to predict existing music.  Then, I used the network to create a song one beat at a time, iteratively feeding it the song-so-far as the input and using its guess of the next beat to inform what notes would be played.  The resulting songs have an audible pattern to them, but aren’t as structured as human-written music.
+              </p>
+              <p>
+                The dataset consisted of 319 MIDI files of Beatles songs.  Each MIDI file consisted of a series of notes with different “instruments” that make up the whole song.  Using the Python library “pretty_midi”, I converted the first instrument’s notes into a boolean Numpy array (see bottom left image) with one column per timestep and one row per note.  To reduce the size of the data, the range of notes were clipped by including the lowest note used in the song and the 50 notes above it.
+              </p>
+              <p>
+                After building the model, the dataset was randomly shuffled and split into testing and training data.  I realized that loading all of our training dataset at once would overload Google Colaboratory’s GPU, so I split the training data into batches to rectify this.  The batches were then loaded into the model to train it, and the loss of both the training and testing data was calculated.  The model was trained with a learning rate of 0.01 over 20 epochs, where each epoch consisted of 42 batches of 14 or 15 songs each (plus one batch for testing).  After training the model, the last state of the model was saved to be used to compose music.
+                </p>
+                <p>
+                  Once the model was trained, it was used to compose music.  The song first started with one beat of silence, and then ran the model on this beat, with its state initialized to zeros (the same as its initial state when it was trained on the Beatles songs).  It produced a likelihood for each possible note in the next beat.  After adding some noise, the four most likely notes were selected, and appended these as the next beat.  This process was repeated; feeding the network the new beat that it had just generated.  Since each beat is ½ second, 1000 beats produces a song that’s 8 minutes and 20 seconds long. The song produced can be seen in the bottom right image.
+                  </p>
+                  <p>The code can be found on <a href="https://github.com/aselker/ml-midi-generation">Github</a></p>
 
+                    <p>The training code can be found on the  <a href="https://colab.research.google.com/drive/1k6jcT4NBa_6nKDx_qB4S7iZ5hflbILgv">Google Collaboration notebook</a></p>
+
+
+                    <p>The training data is from the <a href="https://colinraffel.com/projects/lmd/">Lakh MIDI dataset (“Clean MIDI subset”)</a> </p>
+
+                    <p>A song produced by the trained model: <a href="https://drive.google.com/open?id=1TWIWSD0nfJnHor2Lg5UYCALwjyaHHcKe">Song</a></p>
+
+                    <div class="box alt">
+                      <div class="row gtr-uniform">
+                    <div class="col-7"><span class="image fit"><img src="images/NeuralTunes.png" alt="" /></span></div>
+                    <div class="col-5"><span class="image fit"><img src="images/NeuralTunes2.png" alt="" /></span></div>
+                    </div>
+                </div>
             </div>
 
       </div>
@@ -80,7 +104,7 @@
 
       							</section>
       							<ul class="copyright">
-      								<li>&copy; Audrey Lee. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      								<li>Audrey Lee</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
       							</ul>
       						</div>
       					</footer>

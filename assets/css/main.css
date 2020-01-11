@@ -2325,11 +2325,14 @@ input, select, textarea {
 		.image.small {
 			max-width: 5%;
 		}
+		.image.left.medium {
+			max-width: 20%;
+		}
 		.image.left, .image.right {
 			max-width: 40%;
 		}
 
-			.image.left img, .image.right img, .image.small img {
+			.image.left img, .image.right img, .image.small img,.image.left.medium img {
 				width: 100%;
 			}
 

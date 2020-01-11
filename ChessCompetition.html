@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chess-Competition - Audrey Lee</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+                  <span class="title">Audrey Lee</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+        <nav id="menu">
+          <h2>Menu</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+          </ul>
+        </nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Chess-Competition</h1>
+              <div class="box alt">
+              <div class="row gtr-uniform">
+                <div class="col-5"><span class="image fit"><img src="images/opencv_frame_0.jpeg" alt="" /></span></div>
+
+                <div class="col-5">
+                  <p>In this project, I worked with one other person to have a robot compete against a human in chess. The project - Chess-Competition - uses a simplified method to create a chess game experience between a UR5 robot arm and a human player. A perception process was created in order to mitigate the error during the piece recognition process by using OpenCV to recognize different colors of the chess pieces. </p>
+                  <p>Using an RGB picture of the current board layout, it masks all colors except the specific blue and red of the chess pieces to locate the positions of those chess pieces. It then determines its moves based on the chess pieces' positions on the board. The program stops when either the player or the robot wins.</p>
+
+                </div>
+            </div>
+            </div>
+
+            <p>
+              In Chess-Competition, there are three different forms of information about the chessboard used. The first form is in the form of a virtual chessboard inside the program, written with FEN (Forsyth–Edwards Notation), so that the chess engine can recognize the position of each chess piece later on. The second form is the actual chessboard, in which the program stores information about the real game situation. The last form is a simplified chessboard which is stored as 8*8 matrix. This form stores color information of each position.
+            </p>
+
+            <p>
+              I worked on the image processing of the physical chess board. When the human player moves a piece, the information on the actual chessboard is converted into a new simplified chessboard by using OpenCV. OpenCV recognizes different colors on each position of the actual chessboard, and saves them into a single 8x8 matrix. This 8x8 matrix houses the positions of the humans' pieces and compares it to the previous positions to calculate what the human moved. From there, this information is then sent to the chess algorithm - Stockfish 10 - for the robot to calculate its next move.
+            </p>
+            <p>
+              The code can be found on <a href="https://github.com/olinrobotics/hiro/tree/master/hiro_archive/Fall_2018/chess">Github</a>
+            </p>
+            <p>
+              Stockfish 10 engine: <a href="https://stockfishchess.org/">here</a>
+            </p>
+          </div>
+        </div>
+
+
+              <!-- Footer -->
+      					<footer id="footer">
+      						<div class="inner">
+                    <section>
+      								<h2>Contact</h2>
+      								<ul class="icons">
+      									<!-- <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+      									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+      									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+      									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+      									<li><a href="https://github.com/Audrey-Lee88" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+      									<!-- <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+      									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li> -->
+      									<li><a href="https://www.linkedin.com/in/audrey-lee-3a08a1173/" class="icon brands style2 fa-linkedin"><span class="label">linkedin</span></a></li>
+      									<li><a href="mailto:alee2@olin.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+
+      								</ul>
+
+      							</section>
+      							<ul class="copyright">
+      								<li>Audrey Lee</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      							</ul>
+      						</div>
+      					</footer>
+
+      			</div>
+
+      		<!-- Scripts -->
+      			<script src="assets/js/jquery.min.js"></script>
+      			<script src="assets/js/browser.min.js"></script>
+      			<script src="assets/js/breakpoints.min.js"></script>
+      			<script src="assets/js/util.js"></script>
+      			<script src="assets/js/main.js"></script>
+
+      	</body>
+      </html>
