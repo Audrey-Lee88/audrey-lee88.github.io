@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Passive Tiny Home - Audrey Lee</title>
+		<title>Simulated Radio - Audrey Lee</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -49,36 +49,50 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Quantitative Engineering Analysis: Tiny Passive Solar Home</h1>
+							<h1>Simulated Radio</h1>
 							<div class="box alt">
 								<div class="row gtr-uniform">
-									<div class="col-5"><span class="image fit"><img src="images/DesignHouseQEA.jpg" alt="" /></span></div>
+									<div class="col-5"><span class="image fit"><img src="images/SystemDiagram.PNG" alt="" /></span></div>
 
 									<div class="col-5">
 										<p>
-											I worked with two other people to create a tiny solar house that would allow individuals in Boston to live at a comfortable temperature (between 18-25 degrees Celsius or 291.15-298.15 Kelvin) during the winter season. Restrictions included that the dimensions of the house must be between 100 and 400 square feet and it cannot receive direct sunlight through the windows till noon in the summer. This was so that the house was not incredibly tiny nor would it get super hot that no person could live in it. My goal was to design a lofted house that was both aesthetically pleasing and sustainable. Materials that were considered were hempcrete and 3D printer extrudable concrete; and since they were reusable, recyclable and less toxin in comparison to other materials. Heat was expected to rise in the two-story house, however, for my model of the house, a uniform temperature was implemented.
+											I worked with two other people to create our own version of an amplitude modulation (AM) radio. We created signal generation, transmitter, and receiver circuits in the simulation software LTspice.
 										</p>
 
+
 									</div>
+
+									<p>
+										At the highest level, there are two primary components needed for AM modulation – a transmitter and a receiver. The transmitter encodes a message onto a carrier signal of the desired frequency. For the case of AM, the encoding occurs by scaling the amplitude based on the input signal, thus encoding the signal onto the envelope of the signal. This allows for the signal to be sent at a higher frequency. The modulated signal is then received by a receiver after passing through a channel, which can be anything from air to a wire. For this particular implementation, the channel was a simple wire without any loss or added noise. The received signal is then demodulated using an envelope detector which first rectifies the signal and removes the high frequency carrier wave. Our block diagram of our radio can be seen above.
+									<br> <br>
+										The transmitter is built using an oscillator and multiplier. The output of the oscillator creates a carrier wave to be modulated with a message signal. To get the modulation to occur, namely amplitude modulation, both the carrier and message must be passed into a multiplier. This results in a modulated signal which can be sent over a desired frequency to be received by a receiver, which will demodulate the signal.
+									<br> <br>
+
+										To generate oscillations at a fixed frequency, we created a circuit based on the Colpitts oscillator which was invented by Edwin H. Colpitts in 1918. Part of the LC oscillator family, this oscillator uses an inductor (L) and a capacitor (C) of particular values to generate oscillations at our designed frequency.
+								<br> <br>
+										For the mixer, we implemented two approaches. For our first approach, we used three differential amplifiers to form a Gilbert Cell Mixer. For our second approach we used an operational amplifier to form a Log Anit-Log Mixer.
+									<br> <br>
+										The receiver, like the transmitter, is built using a few components. In many cases, an antenna or something similar is needed to receive the signal, but for the tests in this paper, the transmitter was connected via a wire. Because an amplitude modulated signal is being received, the envelope of that signal must be extracted to find the original message signal. This is often accomplished by using a rectifier paired with a low pass filter.
+									<br> <br>
+										The mixed and transmitted signal for our radio can be seen in the bottom two figures below.
+									</p>
 							</div>
 						</div>
 						<p>
-							I modeled the inside temperature of the house with resistors and capacitors as seen in the bottom left picture. For this project, I used Mathematica and MATLAB to model the temperature of the designed tiny house.
 						</p>
 
 						<p>
-
-							I used the equations shown in the bottom right picture to model the interior temperature of the house. The energy balance on the absorber was symbolically represented with Equation (1) and the energy balance on the wall with Equation (2). Equation (1) took into account the energy input from the sun and the temperature of the absorber as a function of time represented as a capacitor. Equation (2) modeled the temperature of the wall as a function of time represented as a capacitor. The internal air and inner wall were represented as resistors since they are just a medium in which heat flows through. Whereas the absorber and outer wall are represented as capacitors and resistors since they both store heat and are also a medium in which heat flows through. The values of T_A and T_wall from Equations (1) and (2) were used to find the temperature of the air with Equation (3). This internal temperature was used to gauge whether the customized values for L_insulation and L_absorber would get us in the desired internal air temperature range (18-25 degrees C).
-
+							The paper written by me and my partners can be read <a href="PDF/Hardware_Radio_Simulation_Report.pdf">here</a>
 						</p>
 
 						<p>
-							The paper written by me and my partners can be read <a href="PDF/Passive_Solar_Tiny_Home_for_Massachusetts_.pdf">here</a>
+							The code can be found on <a href="https://github.com/Audrey-Lee88/AnalogDigitalComms_HardwareRadio">Github</a>
 						</p>
+
 						<div class="box alt">
 							<div class="row gtr-uniform">
-						<div class="col-5"><span class="image fit"><img src="images/QEACircuitModelProject1.jpg" alt="" /></span></div>
-						<div class="col-6"><span class="image fit"><img src="images/PassiveSolarHouseEq.png" alt="" /></span></div>
+						<div class="col-5"><span class="image fit"><img src="images/analog_mix_inputs_am.png" alt="" /></span></div>
+						<div class="col-6"><span class="image fit"><img src="images/analog_modulated_signal.png" alt="" /></span></div>
 						</div>
 						</div>
             </div>

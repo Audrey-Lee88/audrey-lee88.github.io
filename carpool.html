@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Resume - Audrey Lee</title>
+		<title>Carpool Scheduling - Audrey Lee</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -49,12 +49,50 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Resume</h1>
-              <body>
-                <iframe src="PDF/AudreyLeeResume.pdf" width="100%" height="500px">
-                </iframe>
-              </body>
+							<h1>Carpool Scheduling Using the Edmonds-Karp Algorithm</h1>
+              <span class="image fit">
+                <img src="images/Carpool.png" alt="" />
+              </span>
+              <p>
+								I worked with a team to create a fair carpool sharing system via the use of network flows.
+								I implemented the Edmonds-Karp algorithm with our network flows representation in order to maximize the flow while making sure all people are driving a fair amount.
+							</p>
+							<p>
+								The table above shows a potential schedule the algorithm can see and will transform into a graph.
+								Given the amount of days and who needs the car which days, it will be able to designate who will drive for a given day.
+							</p>
 
+							<div class="col-7"><span class="image right"><img src="images/EdmondKarp.png" alt="" /></span></div>
+							<p>
+								The structure of our Edmonds-Karp algorithm code is as follows:
+							</p>
+
+							<p>
+								This function utilizes several helper functions such as the Breadth First Search Algorithm (BFS).
+								BFS checks if there is a path from source to sink which will tell our Edmond-Karp function when to stop.
+							</p>
+
+							<div class="col-7"><span class="image left"><img src="images/BFS.png" alt="" /></span></div>
+
+							<p style="text-align:right;">
+								The output will have a similar table as its input, however, the value at each row-column intersection is the probability (or responsibility percent) of the person to drive on the given day.
+								Our algorithm is able to successfully generate a driving responsibility schedule that allows us to determine who should drive on which day by looking at the person with the highest percentage on that day.
+								When we compare the original carpool schedule to the results, we notice that the number of days a person is using the carpool is usually proportional to how much a person would drive.
+
+							</p>
+
+							<p>
+								The paper written by me and my partners can be read <a href="PDF/AA_Final_Project.pdf">here</a>
+							</p>
+              <p>The code can be found on <a href="https://github.com/JackMao981/Carpool">Github</a></p>
+
+
+                    <div class="box alt">
+                      <div class="row gtr-uniform">
+                    <!-- <div class="col-7"><span class="image fit"><img src="images/NeuralTunes.png" alt="" /></span></div> -->
+                    <!-- <div class="col-5"><span class="image fit"><img src="images/NeuralTunes2.png" alt="" /></span></div> -->
+                    </div>
+                </div>
             </div>
 
       </div>
@@ -73,7 +111,7 @@
       									<!-- <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
       									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li> -->
       									<li><a href="https://www.linkedin.com/in/audrey-lee-3a08a1173/" class="icon brands style2 fa-linkedin"><span class="label">linkedin</span></a></li>
-      									<li><a href="mailto:alee22@stanford.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+												<li><a href="mailto:alee22@stanford.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 
       								</ul>
 
